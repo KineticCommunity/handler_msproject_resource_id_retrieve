@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="msproject_resource_id_retrieve" name="MSProject Resource Id Retrieve" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>This handler looks up the Id when given a Resource Email.</description>
+    <helpurl>http://ktc.kineticdata.com/handler/msproject_resource_id_retrieve/1</helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="resource_email" label="Resource Email" required="true"
+            tooltip="The email that is associated with the desired Resource."/>
+    </parameters>
+    <handler name="msproject_resource_id_retrieve" version="1">
+        <infos>
+            <info name="username">&lt;%= @info['username'] %&gt;</info>
+            <info name="password">&lt;%= @info['password'] %&gt;</info>
+            <info name="ms_project_location">&lt;%= @info['ms_project_location'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name="resource_email">&lt;%= @parameters['resource_email'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="resource_id"/>
+    </results>
+</taskDefinition>

@@ -1,0 +1,21 @@
+== MSProject_ResourceId_Retrieve
+This handler looks up the Id when given a Resource Email.
+
+=== Parameters
+[Resource Email]
+  The email that is associated with the desired Resource.
+
+=== Results
+[Resource Id]
+  The id of the Resource that corresponds to the Resource Email.
+
+==== Sample Configuration
+Resource Email:                   Demo.User@ACME.com
+
+=== Detailed Description
+This handler makes a REST call to the Microsoft Project REST API to lookup an
+Id corresponding to the inputted Resource Email. After authenticating against 
+the Project Server using the inputted username and password, the handler 
+makes a call to Project to get the Id that corresponds to the inputted Email. 
+The id  that was found is then returned. Any errors that occur during this 
+process will be caught and re-raised by the handler.
